@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: #090a30 url("./Images/main-bg.jpg");
+  background-blend-mode: hard-light;
+}
+nav {
+  width: 100%;
+  padding: 12px 3%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000000b4;
+  box-shadow: rgba(0, 0, 0, 0.336) 0px 7px 29px 0px;
+}
+a {
+  text-decoration: none;
+}
+.logo {
+  width: 14rem;
+}
+
+.list-container {
+  display: flex;
+  align-items: center;
+  column-gap: 4rem;
+
+  & a {
+    font-size: 2.4rem;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+
+    &:hover {
+      color: yellow;
+      border-bottom: 3px solid yellow;
+      padding-bottom: 0.6rem;
+      scale: 1.1;
+    }
+  }
+}
+
+.search-container {
+  width: 30%;
+  display: flex;
+  gap: 2rem;
+  & input {
+    width: 100%;
+    padding: 1rem 3rem;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #cacaca;
+    color: #ffff;
+    font-size: 2.7rem;
+    background: transparent;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+
+    &::placeholder {
+      color: #fff;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.btn {
+  outline: none;
+  border: none;
+  color: #000000;
+  font-size: 2.5rem;
+  background: #f8d302;
+  padding: 1.3rem;
+  transition: 0.5s;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  &:hover {
+    scale: 1.1;
+    background: #0000007e;
+    rotate: 360deg;
+    color: #ffff;
+    border: 3px solid yellow;
+  }
+  &:active {
+    background: #02020279;
+    color: #fff;
+    scale: 0.89;
+  }
+}
+
+.video {
+  width: 100%;
+  height: 45vh;
+  margin-top: 93px;
+  box-shadow: rgba(0, 0, 0, 0.589) 0px 7px 29px 0px;
+
+  & video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+main {
+  padding: 0 3%;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+.readmore {
+  margin: 0 auto;
+  border-radius: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 0.7rem 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  color: #000000;
+  font-size: 2.2rem;
+  background: #f8d302;
+  &:hover {
+    scale: 1.01;
+    background: #0000007e;
+    color: #ffff;
+    border: 3px solid yellow;
+  }
+  &:active {
+    background: #02020279;
+    color: #fff;
+    scale: 0.89;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #0000006c;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  box-shadow: rgba(255, 230, 2, 0.966) 0px 0px 5px 0px;
+}
+
+.card-img {
+  width: 100%;
+  height: 300px;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    object-fit: cover;
+  }
+}
+.card-content {
+  padding: 2rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  & h2 {
+    font-size: 4rem;
+  }
+  & #date {
+    font-size: 2.3rem;
+    margin-top: -15px;
+    color: #ccc;
+  }
+  & #Description {
+    font-size: 2.5rem;
+  }
+}
+
+.latest-news {
+  text-align: center;
+  margin: 8rem;
+  color: #fff;
+
+  & h1 {
+    font-size: 7rem;
+  }
+  & p {
+    margin: 0 auto;
+    max-width: 40%;
+    margin-top: 1.2rem;
+    font-size: 2.5rem;
+    color: #c0c0c0;
+    font-weight: bold;
+  }
+}

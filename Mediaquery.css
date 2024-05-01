@@ -1,0 +1,54 @@
+@media screen and (width < 1200px) {
+  html {
+    font-size: 58.5%;
+  }
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (width < 900px) {
+  .latest-news {
+    & p {
+      max-width: 75%;
+    }
+  }
+  .list-container {
+    display: none;
+  }
+  .search-container {
+    width: 65%;
+  }
+}
+
+@media screen and (width < 748px) {
+  main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  html {
+    font-size: 55.5%;
+  }
+}
+
+@media screen and (width < 648px) {
+  html {
+    font-size: 52.5%;
+  }
+  .latest-news {
+    & p {
+      max-width: 100%;
+    }
+  }
+}
+
+@media screen and (width < 548px) {
+  .search-container {
+    display: none;
+  }
+}
+
+@media screen and (width < 368px) {
+    .latest-news {
+        margin: 1rem;
+    }
+}
