@@ -36,16 +36,11 @@ let fillCards = (articles) => {
 };
 
 let fetchNews = async (query) => {
-  try {
-    let fetchData = await fetch(`${apiUrl}${query}&apiKey=${apiKey}`);
-    let res = await fetchData.json();
+  let fetchData = await fetch(`${apiUrl}${query}&apiKey=${apiKey}`);
+  let res = await fetchData.json();
 
-    document.getElementById("head").innerText = query;
-    fillCards(res.articles);
-  } catch {
-    document.getElementById("head").innerText =
-      "Sorry Our API is not Working..!!!";
-  }
+  document.getElementById("head").innerText = query;
+  fillCards(res.articles);
 };
 
 let showData = (query) => {
