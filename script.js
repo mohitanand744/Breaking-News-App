@@ -1,4 +1,4 @@
-apiKey = "1d3a0eefa97b499d8fbc4ee93eeb40b7";
+apiKey = "1080ce5d849047eeb3dfa6f64b6bfd2a";
 apiUrl = `https://newsapi.org/v2/everything?q=`;
 
 let fillCards = (articles) => {
@@ -59,6 +59,17 @@ document.querySelector(".list-container").addEventListener("click", (e) => {
   });
 
   clickedElement.classList.add("active");
+});
+
+let searchButton = document.querySelector(".btn");
+searchButton.addEventListener("click", () => {
+  let searchText = document.querySelector(".search-text").value;
+  const query = searchText;
+  if (!query) {
+    document.getElementById("head").innerText = "Please Give Some Input";
+  } else {
+    fetchNews(query);
+  }
 });
 
 window.addEventListener("load", () => fetchNews("india"));

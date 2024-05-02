@@ -230,7 +230,7 @@ main {
   color: #fff;
 
   & h1 {
-    font-size: 7rem;
+    font-size: 5rem;
     text-transform: uppercase;
     border-bottom: 4px solid yellow;
     padding-bottom: 0.8rem;
