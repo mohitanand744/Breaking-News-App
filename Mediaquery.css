@@ -39,16 +39,33 @@
       max-width: 100%;
     }
   }
+  .cover-banner {
+    height: 35vh;
+  }
 }
 
 @media screen and (width < 548px) {
   .search-container {
     display: none;
   }
+  .cover-banner {
+    height: 30vh;
+  }
 }
 
 @media screen and (width < 368px) {
-    .latest-news {
-        margin: 1rem;
+  .latest-news {
+    margin: 3rem;
+
+    & h1{
+      font-size: 6rem;
     }
+
+    & p {
+      font-size: 2rem;
+    }
+  }
+  .cover-banner {
+    height: 20vh;
+  }
 }

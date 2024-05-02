@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Breaking News</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="Mediaquery.css">
+    <link rel="stylesheet" href="Mediaquery.css" />
+    <link rel="shortcut icon" href="./Images/fav.png" type="image/x-icon" />
   </head>
   <body>
     <nav>
       <img class="logo" src="./Images/News-Logo.png" alt="News Logo" />
 
       <div class="list-container">
-        <a href="#">Finance</a>
-        <a href="#">Technology</a>
-        <a href="#">Politics</a>
-        <a href="#">IPL</a>
+        <a href="#" id="Finance" onclick="showData(`Finance`)">Finance</a>
+        <a href="#" id="Technology" onclick="showData(`Technology`)"
+          >Technology</a
+        >
+        <a href="#" id="Politics" onclick="showData(`Politics`)">Politics</a>
+        <a href="#" id="IPL" onclick="showData(`IPL`)">IPL</a>
       </div>
       <div class="search-container">
         <input type="text" placeholder="e.g. Science..." />
@@ -24,182 +27,37 @@
         </button>
       </div>
     </nav>
-
-    <div class="video">
-      <video autoplay muted loop id="myVideo">
-        <source src="./Images/Breaking-News.mp4" type="video/mp4" />
-      </video>
+    <div class="cover-banner">
+      <img src="./Images/main-bg1.jpg.png" alt="" />
     </div>
     <div class="latest-news">
-      <h1>Technology</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quis
-      </p>
+      <h1 id="head">News</h1>
     </div>
-    <main>
+    <main id="card-container"></main>
+
+    <template id="template">
       <div class="card">
         <div class="card-img">
           <img
+            id="news-img"
             src="https://source.unsplash.com/random/?technology"
             alt="technology"
           />
         </div>
         <div class="card-content">
           <h2 id="title">This is Title</h2>
-          <p id="date">Date: 25/02/2024</p>
+          <p id="source">Date: 25/02/2024</p>
           <p id="Description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
             eligendi placeat nihil nisi magni minima tenetur omnis obcaecati
-            quae sit vero, harum itaque similique consequatur!
+            quae sit vero, harum itaque similique consequatur!<br /><span
+              id="readMore"
+              >read more</span
+            >
           </p>
-          <button class="readmore">Read More</button>
         </div>
       </div>
-      <div class="card">
-        <div class="card-img">
-          <img
-            src="https://source.unsplash.com/random/?laptop"
-            alt="technology"
-          />
-        </div>
-        <div class="card-content">
-          <h2 id="title">This is Title</h2>
-          <p id="date">Date: 25/02/2024</p>
-          <p id="Description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            eligendi placeat nihil nisi magni minima tenetur omnis obcaecati
-            quae sit vero, harum itaque similique consequatur!
-          </p>
-          <button class="readmore">Read More</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img
-            src="https://source.unsplash.com/random/?mobile"
-            alt="technology"
-          />
-        </div>
-        <div class="card-content">
-          <h2 id="title">This is Title</h2>
-          <p id="date">Date: 25/02/2024</p>
-          <p id="Description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            eligendi placeat nihil nisi magni minima tenetur omnis obcaecati
-            quae sit vero, harum itaque similique consequatur!
-          </p>
-          <button class="readmore">Read More</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img
-            src="https://source.unsplash.com/random/?coding"
-            alt="technology"
-          />
-        </div>
-        <div class="card-content">
-          <h2 id="title">This is Title</h2>
-          <p id="date">Date: 25/02/2024</p>
-          <p id="Description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            eligendi placeat nihil nisi magni minima tenetur omnis obcaecati
-            quae sit vero, harum itaque similique consequatur!
-          </p>
-          <button class="readmore">Read More</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img
-            src="https://source.unsplash.com/random/?love"
-            alt="technology"
-          />
-        </div>
-        <div class="card-content">
-          <h2 id="title">This is Title</h2>
-          <p id="date">Date: 25/02/2024</p>
-          <p id="Description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            eligendi placeat nihil nisi magni minima tenetur omnis obcaecati
-            quae sit vero, harum itaque similique consequatur!
-          </p>
-          <button class="readmore">Read More</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img
-            src="https://source.unsplash.com/random/?fitness"
-            alt="technology"
-          />
-        </div>
-        <div class="card-content">
-          <h2 id="title">This is Title</h2>
-          <p id="date">Date: 25/02/2024</p>
-          <p id="Description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            eligendi placeat nihil nisi magni minima tenetur omnis obcaecati
-            quae sit vero, harum itaque similique consequatur!
-          </p>
-          <button class="readmore">Read More</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img
-            src="https://source.unsplash.com/random/?killing"
-            alt="technology"
-          />
-        </div>
-        <div class="card-content">
-          <h2 id="title">This is Title</h2>
-          <p id="date">Date: 25/02/2024</p>
-          <p id="Description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            eligendi placeat nihil nisi magni minima tenetur omnis obcaecati
-            quae sit vero, harum itaque similique consequatur!
-          </p>
-          <button class="readmore">Read More</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img
-            src="https://source.unsplash.com/random/?power"
-            alt="technology"
-          />
-        </div>
-        <div class="card-content">
-          <h2 id="title">This is Title</h2>
-          <p id="date">Date: 25/02/2024</p>
-          <p id="Description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            eligendi placeat nihil nisi magni minima tenetur omnis obcaecati
-            quae sit vero, harum itaque similique consequatur!
-          </p>
-          <button class="readmore">Read More</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-img">
-          <img
-            src="https://source.unsplash.com/random/?aero"
-            alt="technology"
-          />
-        </div>
-        <div class="card-content">
-          <h2 id="title">This is Title</h2>
-          <p id="date">Date: 25/02/2024</p>
-          <p id="Description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            eligendi placeat nihil nisi magni minima tenetur omnis obcaecati
-            quae sit vero, harum itaque similique consequatur!
-          </p>
-          <button class="readmore">Read More</button>
-        </div>
-      </div>
-    </main>
+    </template>
 
     <script src="./script.js"></script>
     <script
