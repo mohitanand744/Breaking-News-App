@@ -36,11 +36,16 @@ let fillCards = (articles) => {
 };
 
 let fetchNews = async (query) => {
-  let fetchData = await fetch(`${apiUrl}${query}&apiKey=${apiKey}`);
-  let res = await fetchData.json();
+  try {
+    let fetchData = await fetch(`${apiUrl}${query}&apiKey=${apiKey}`);
+    let res = await fetchData.json();
 
-  document.getElementById("head").innerText = query;
-  fillCards(res.articles);
+    document.getElementById("head").innerText = query;
+    fillCards(res.articles);
+  } catch {
+    document.getElementById("head").innerText =
+      "Sorry Our API is not Working..!!!";
+  }
 };
 
 let showData = (query) => {
@@ -56,4 +61,4 @@ document.querySelector(".list-container").addEventListener("click", (e) => {
   clickedElement.classList.add("active");
 });
 
-window.addEventListener("load", () => fetchNews("news"));
+window.addEventListener("load", () => fetchNews("india"));
