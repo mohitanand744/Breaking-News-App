@@ -16,8 +16,7 @@ let fillCards = (articles) => {
     const newsDesc = cardClone.querySelector("#Description");
 
     newsImg.src = article.urlToImage;
-    newsTitle.innerHTML = article.title; /* 
-    document.getElementById("head").innerText = query; */
+    newsTitle.innerHTML = article.title;
     let description = article.description;
     let words = description.split(" ");
     let limitedDescription = words.slice(0, 19).join(" ");
@@ -62,4 +61,4 @@ document.querySelector(".list-container").addEventListener("click", (e) => {
   clickedElement.classList.add("active");
 });
 
-window.addEventListener("load", () => fetchNews("News"));
+window.addEventListener("load", () => fetchNews("news"));
