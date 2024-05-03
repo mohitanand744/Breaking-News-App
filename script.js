@@ -34,6 +34,81 @@ let fillCards = (articles) => {
   });
 };
 
+// ! pagination Code
+
+const initPagination = () => {
+  let pageNumbers = document.querySelector(".pageNumbers");
+  let cardContainer = document.getElementById("card-container");
+  let cardList = cardContainer.querySelectorAll(".card");
+  let prevBtn = document.getElementById("prevBtn");
+  let nextBtn = document.getElementById("nextBtn");
+
+  let cardLimit = 9;
+  let pageCount = Math.ceil(cardList.length / 4);
+  let currentPage = 1;
+
+  const displayPageNumbers = () => {
+    pageNumbers.innerHTML = "";
+    for (let i = 1; i <= 5; i++) {
+      const pageNumber = document.createElement("a");
+      pageNumber.setAttribute("href", "#");
+      pageNumber.setAttribute("index", i);
+      pageNumber.innerText = i;
+      pageNumbers.appendChild(pageNumber);
+    }
+  };
+
+  const disableButton = (button, condition) => {
+    button.classList.toggle("disabled", condition);
+    button.disabled = condition;
+  };
+
+  const controlButtonsStatus = () => {
+    disableButton(prevBtn, currentPage === 1);
+    disableButton(nextBtn, pageCount === currentPage);
+  };
+
+  const handleActivePageNumber = () => {
+    pageNumbers
+      .querySelectorAll("a")
+      .forEach((button) =>
+        button.classList.toggle(
+          "bgActive",
+          Number(button.getAttribute("index")) === currentPage
+        )
+      );
+  };
+
+  const setCurrentPage = (pageNum) => {
+    currentPage = pageNum;
+    controlButtonsStatus();
+    handleActivePageNumber();
+
+    const prevRange = (pageNum - 1) * cardLimit;
+    const currRange = pageNum * cardLimit;
+
+    cardList.forEach((card, index) => {
+      card.classList.toggle("hidden", index < prevRange || index >= currRange);
+    });
+  };
+
+  const handlePageClick = (e) => {
+    e.preventDefault();
+    const pageNum = Number(e.target.getAttribute("index"));
+    if (pageNum) {
+      setCurrentPage(pageNum);
+    }
+  };
+
+  pageNumbers.addEventListener("click", handlePageClick);
+  prevBtn.addEventListener("click", () => setCurrentPage(currentPage - 1));
+  nextBtn.addEventListener("click", () => setCurrentPage(currentPage + 1));
+
+  displayPageNumbers();
+  controlButtonsStatus();
+  setCurrentPage(1);
+};
+
 let fetchNews = async (query) => {
   try {
     let fetchData = await fetch(
@@ -43,6 +118,7 @@ let fetchNews = async (query) => {
 
     document.getElementById("head").innerText = query;
     fillCards(res.articles);
+    initPagination();
   } catch {
     document.getElementById("head").innerText =
       "Sorry Our API is not Working..!!!";
@@ -73,4 +149,6 @@ searchButton.addEventListener("click", () => {
   }
 });
 
-window.addEventListener("load", () => fetchNews("india"));
+window.addEventListener("load", () => {
+  fetchNews("india");
+});

@@ -95,13 +95,14 @@ a {
   color: #000000;
   font-size: 2.5rem;
   background: #f8d302;
-  padding: 1.3rem;
+  width: 63px;
+  aspect-ratio: 1;
   transition: 0.5s;
-  border-radius: 2rem;
-  -webkit-border-radius: 2rem;
-  -moz-border-radius: 2rem;
-  -ms-border-radius: 2rem;
-  -o-border-radius: 2rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
@@ -175,6 +176,7 @@ main {
 .card {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   gap: 1.5rem;
   background: #0000006c;
   border-radius: 2rem;
@@ -241,7 +243,7 @@ main {
 
 .pagination-container {
   width: 96%;
-  max-width: 70%;
+  max-width: 30%;
   margin: 0 auto;
   padding: 5rem 0;
 }
@@ -264,6 +266,10 @@ main {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
 
+  & i {
+    color: yellow;
+  }
+
   &:hover {
     background: #02020279;
     color: #fff;
@@ -275,6 +281,7 @@ main {
   align-items: center;
   gap: 1rem;
 }
+
 .pageNumbers {
   margin: 1rem;
   display: flex;
@@ -308,6 +315,15 @@ main {
 
   & a.bgActive {
     background: #00000073;
-    box-shadow: rgba(202, 182, 2, 0.884) 0px 0px 27px inset;
+    box-shadow: rgb(255, 230, 0) 0px 0px 25px inset;
   }
+}
+
+.disabled {
+  & i {
+    color: #917b00;
+  }
+}
+.hidden {
+  display: none;
 }
