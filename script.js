@@ -1,4 +1,4 @@
-apiKey = "1080ce5d849047eeb3dfa6f64b6bfd2a";
+apiKey = "a4b9eeed786d4868bf252831e3c9dbe9";
 apiUrl = `https://newsapi.org/v2/everything?q=`;
 
 let fillCards = (articles) => {
