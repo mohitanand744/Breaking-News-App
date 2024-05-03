@@ -1,4 +1,3 @@
-apiKey = "a4b9eeed786d4868bf252831e3c9dbe9";
 apiUrl = `https://newsapi.org/v2/everything?q=`;
 
 let fillCards = (articles) => {
@@ -37,7 +36,9 @@ let fillCards = (articles) => {
 
 let fetchNews = async (query) => {
   try {
-    let fetchData = await fetch(`${apiUrl}${query}&apiKey=${apiKey}`);
+    let fetchData = await fetch(
+      `${apiUrl}${query}&apiKey=a4b9eeed786d4868bf252831e3c9dbe9`
+    );
     let res = await fetchData.json();
 
     document.getElementById("head").innerText = query;
