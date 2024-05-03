@@ -57,15 +57,18 @@
   .latest-news {
     margin: 3rem;
 
-    & h1{
-      font-size: 6rem;
-    }
-
-    & p {
-      font-size: 2rem;
+    & h1 {
+      font-size: 3rem;
     }
   }
   .cover-banner {
     height: 20vh;
+  }
+  .pageNumbers {
+    & a {
+      font-size: 2.2rem;
+      width: 37px;
+      height: 37px;
+    }
   }
 }
