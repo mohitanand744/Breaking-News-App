@@ -34,7 +34,7 @@ searchButton.addEventListener("click", () => {
   let searchText = document.querySelector(".search-text").value;
   const query = searchText;
   if (!query) {
-    document.getElementById("head").innerText = "Please Give Some Input";
+    document.getElementById("head").innerText = "Input Not Found!!";
   } else {
     fetchNews(query);
   }
