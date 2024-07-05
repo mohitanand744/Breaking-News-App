@@ -3,7 +3,7 @@ apiUrl = `https://newsapi.org/v2/everything?q=`;
 let fetchNews = async (query) => {
   try {
     let fetchData = await fetch(
-      `${apiUrl}${query}&apiKey=a4b9eeed786d4868bf252831e3c9dbe9`
+      `${apiUrl}${query}&apiKey=99d6530957b14c0a8db161f733a52807`
     );
     let res = await fetchData.json();
 
